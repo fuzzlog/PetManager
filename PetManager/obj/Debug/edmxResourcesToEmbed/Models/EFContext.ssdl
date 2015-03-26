@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnimalsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Animals">
+    <Key>
+      <PropertyRef Name="AnimalsID" />
+    </Key>
+    <Property Name="AnimalsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Moniker" Type="varchar" MaxLength="255" />
+    <Property Name="PetId" Type="int" />
+    <Property Name="City" Type="varchar" MaxLength="255" />
+    <Property Name="Located" Type="datetime" />
+    <Property Name="AnimalStatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnimalStatus">
+    <Key>
+      <PropertyRef Name="AnimalStatusID" />
+    </Key>
+    <Property Name="AnimalStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AnimalsDBModelStoreContainer">
+    <EntitySet Name="Animals" EntityType="Self.Animals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnimalStatus" EntityType="Self.AnimalStatus" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
